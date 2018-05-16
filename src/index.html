@@ -1,6 +1,6 @@
 <html>
 	<header>
-		<title>Dev Portfolio</title>
+		<title>${pageTitle ? pageTitle : title}</title>
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
 		<style>
 			body{
@@ -30,6 +30,7 @@
 				justify-content: space-around;
 			}
 			.portfolio__element{
+				display: block;
 				padding: 32px;
 			}
 
@@ -67,18 +68,17 @@
 		<div class="header">
 			<div class="header__text">
 				<h1 class="header__title">
-					Mark Holmes
+					${title}
 				</h1>
 				<p class="header__description">
-					I am a Minneapolis Software Engineer specializing in web technologies.
+					${description}
 				</p>
 			</div>
 			<div class="header__picture">
-				<img src="https://gravatar.com/avatar/8874f202996def194f7f880694354735?s=256" />
+				<img src="https://gravatar.com/avatar/${gravatarHash}?s=256" alt="${pictureText ? pictureText : ''}" />
 			</div>
 		</div>
 		<div class="portfolio">
-			<!--Icons from flaticon.com-->
 			<div class="portfolio__element portfolio__element--github">
 				<div class="portfolio__element__icon">
 					<i class="fab fa-github"></i>
@@ -99,19 +99,23 @@
 					<i class="fab fa-bitbucket"></i>
 				</div>
 			</div>
-			<div class="portfolio__element portfolio__element--bitbucket">
+			<div class="portfolio__element portfolio__element--email">
 				<div class="portfolio__element__icon">
 					<i class="fas fa-at"></i>
 				</div>
 			</div>
-			<div class="portfolio__element portfolio__element--bitbucket">
+			<a href="${stackOverflowLink}" target="_blank" title="Stack Overflow" class="portfolio__element portfolio__element--stack-overflow">
 				<div class="portfolio__element__icon">
 					<i class="fab fa-stack-overflow"></i>
 				</div>
-			</div>
+			</a>
+			${portfolio.stackExchange ?
+			`<div class="portfolio__element portfolio__element--stack-exchange">
+				<div class="portfolio__element__icon">
+					<i class="fab fa-stack-exchange"></i>
+				</div>
+			</div>`
+			: '' }
 		</div>
-		<script>
-			
-		</script>
 	</body>
 </html>
