@@ -79,43 +79,13 @@
 			</div>
 		</div>
 		<div class="portfolio">
-			<div class="portfolio__element portfolio__element--github">
-				<div class="portfolio__element__icon">
-					<i class="fab fa-github"></i>
-				</div>
-			</div>
-			<div class="portfolio__element portfolio__element--linkedin">
-				<div class="portfolio__element__icon">
-					<i class="fab fa-linkedin-in"></i>
-				</div>
-			</div>
-			<div class="portfolio__element portfolio__element--twitter">
-				<div class="portfolio__element__icon">
-					<i class="fab fa-twitter"></i>
-				</div>
-			</div>
-			<div class="portfolio__element portfolio__element--bitbucket">
-				<div class="portfolio__element__icon">
-					<i class="fab fa-bitbucket"></i>
-				</div>
-			</div>
-			<div class="portfolio__element portfolio__element--email">
-				<div class="portfolio__element__icon">
-					<i class="fas fa-at"></i>
-				</div>
-			</div>
-			<a href="${stackOverflowLink}" target="_blank" title="Stack Overflow" class="portfolio__element portfolio__element--stack-overflow">
-				<div class="portfolio__element__icon">
-					<i class="fab fa-stack-overflow"></i>
-				</div>
-			</a>
-			${portfolio.stackExchange ?
-			`<div class="portfolio__element portfolio__element--stack-exchange">
-				<div class="portfolio__element__icon">
-					<i class="fab fa-stack-exchange"></i>
-				</div>
-			</div>`
-			: '' }
+			${portfolioEntries.github ? portfolioEntries.github : ''}
+			${portfolioEntries.linkedIn ? portfolioEntries.linkedIn : ''}
+			${portfolioEntries.twitter ? portfolioEntries.twitter : ''}
+			${portfolioEntries.bitbucket ? portfolioEntries.bitbucket : ''}
+			${portfolioEntries.email ? portfolioEntries.email : ''}
+			${portfolioEntries.stackOverflow ? portfolioEntries.stackOverflow : ''}
+			${portfolioEntries.stackExchange ? portfolioEntries.stackExchange : ''}
 		</div>
 	</body>
 </html>

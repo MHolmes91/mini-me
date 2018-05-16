@@ -1,15 +1,17 @@
 /*
-Todo: Portfolio item templating
-Separation of concerns
+Todo: Separation of concerns
 SCSS
 Hover state
 Formatting
 SCSS templating
+Manage deps
+Refresh on portfolio.json change
  */
 const crypto = require('crypto');
 const path = require('path');
 const fs = require("fs");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const portfolioEntries = require('./src/index.js');
 
 const md5 = (data) => crypto.createHash('md5').update(data).digest("hex");
 
@@ -17,9 +19,6 @@ let portfolioParameters = JSON.parse(fs.readFileSync("portfolio.json"));
 
 if(portfolioParameters.gravatarEmail){
 	portfolioParameters.gravatarHash = md5(portfolioParameters.gravatarEmail);
-}
-if(portfolioParameters.portfolio.stackOverflow){
-	portfolioParameters.stackOverflowLink = portfolioParameters.portfolio.stackOverflow.id ? 'https://stackoverflow.com/users/' + portfolioParameters.portfolio.stackOverflow.id : '';
 }
 
 const templateParameters = Object.assign({
@@ -29,14 +28,21 @@ const templateParameters = Object.assign({
 	gravatarEmail: '',
 	pictureText: '',
 	pageTitle: '',
-	stackOverflowLink: ''
+	portfolioEntries: {}
 }, portfolioParameters);
+
+templateParameters.portfolioEntries.github = portfolioEntries.githubEntry(portfolioParameters.portfolio.github);
+templateParameters.portfolioEntries.linkedIn = portfolioEntries.linkedInEntry(portfolioParameters.portfolio.linkedIn);
+templateParameters.portfolioEntries.twitter = portfolioEntries.twitterEntry(portfolioParameters.portfolio.twitter);
+templateParameters.portfolioEntries.bitbucket = portfolioEntries.bitbucketEntry(portfolioParameters.portfolio.bitbucket);
+templateParameters.portfolioEntries.email = portfolioEntries.emailEntry(portfolioParameters.portfolio.email);
+templateParameters.portfolioEntries.stackOverflow = portfolioEntries.stackOverflowEntry(portfolioParameters.portfolio.stackOverflow);
+templateParameters.portfolioEntries.stackExchange = portfolioEntries.stackExchangeEntry(portfolioParameters.portfolio.stackExchange);
 
 module.exports = {
 	devServer: {
 		contentBase: './dist'
 	},
-	entry: './src/index.js',
 	output: {
 		path: path.resolve(__dirname, 'dist'),
     	filename: 'index.js'
