@@ -1,0 +1,117 @@
+<html>
+	<header>
+		<title>Dev Portfolio</title>
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+		<style>
+			body{
+				color: #CCCCCC;
+				background-color: #111111;
+			}
+
+			.header{
+				display: flex;
+				flex-flow: row wrap;
+				justify-content: space-around;
+				margin: 32px 16px 96px 16px;
+			}
+
+			.header__text{
+				max-width: 75%;
+				margin: 0px 32px 32px 0px;
+			}
+
+			.header__picture img{
+				border-radius: 50%;
+			}
+
+			.portfolio{
+				display: flex;
+				flex-flow: row wrap;
+				justify-content: space-around;
+			}
+			.portfolio__element{
+				padding: 32px;
+			}
+
+			/*Github has its own circle*/
+			.portfolio__element--github .portfolio__element__icon{
+				width: 128px;
+				height: 128px;
+				text-align: center;
+				padding: 0;
+				border-radius: 0;
+				color: white;
+				background-color: initial;
+			}
+
+			.portfolio__element--github .portfolio__element__icon i{
+				font-size: 128px;
+			}
+
+			.portfolio__element__icon{
+				background-color: white;
+				color: #111111;
+				width: 70px;
+				height: 70px;
+				padding: 29px;
+				border-radius: 50%;
+				text-align: center;
+			}
+
+			.portfolio__element__icon > i{
+				font-size: 70px;
+			}
+		</style>
+	</header>
+	<body>
+		<div class="header">
+			<div class="header__text">
+				<h1 class="header__title">
+					Mark Holmes
+				</h1>
+				<p class="header__description">
+					I am a Minneapolis Software Engineer specializing in web technologies.
+				</p>
+			</div>
+			<div class="header__picture">
+				<img src="https://gravatar.com/avatar/8874f202996def194f7f880694354735?s=256" />
+			</div>
+		</div>
+		<div class="portfolio">
+			<!--Icons from flaticon.com-->
+			<div class="portfolio__element portfolio__element--github">
+				<div class="portfolio__element__icon">
+					<i class="fab fa-github"></i>
+				</div>
+			</div>
+			<div class="portfolio__element portfolio__element--linkedin">
+				<div class="portfolio__element__icon">
+					<i class="fab fa-linkedin-in"></i>
+				</div>
+			</div>
+			<div class="portfolio__element portfolio__element--twitter">
+				<div class="portfolio__element__icon">
+					<i class="fab fa-twitter"></i>
+				</div>
+			</div>
+			<div class="portfolio__element portfolio__element--bitbucket">
+				<div class="portfolio__element__icon">
+					<i class="fab fa-bitbucket"></i>
+				</div>
+			</div>
+			<div class="portfolio__element portfolio__element--bitbucket">
+				<div class="portfolio__element__icon">
+					<i class="fas fa-at"></i>
+				</div>
+			</div>
+			<div class="portfolio__element portfolio__element--bitbucket">
+				<div class="portfolio__element__icon">
+					<i class="fab fa-stack-overflow"></i>
+				</div>
+			</div>
+		</div>
+		<script>
+			
+		</script>
+	</body>
+</html>
