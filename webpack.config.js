@@ -6,6 +6,11 @@ Formatting
 SCSS templating
 Manage deps
 Refresh on portfolio.json change
+Add Generic link/project
+Add Generic app/project
+Languages
+Audit
+Font
  */
 const crypto = require('crypto');
 const path = require('path');
