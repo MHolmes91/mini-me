@@ -1,60 +1,57 @@
 /*
-Todo: Separation of concerns
+Todo:
+
 SCSS
-Hover state
-Formatting
 SCSS templating
-Manage deps
 Refresh on portfolio.json change
+Manage deps
+
 Add Generic link/project
 Add Generic app/project
 Languages
-Audit
+
+Hover state
+favicon
 Font
+Breakpoints
+
+Audit
  */
-const crypto = require('crypto');
+const _ = require('lodash');
 const path = require('path');
 const fs = require("fs");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const portfolioEntries = require('./src/index.js');
 
-const md5 = (data) => crypto.createHash('md5').update(data).digest("hex");
+const consts = require('./src/consts.js');
+const components = require('./src/components.js');
 
 let portfolioParameters = JSON.parse(fs.readFileSync("portfolio.json"));
-
-if(portfolioParameters.gravatarEmail){
-	portfolioParameters.gravatarHash = md5(portfolioParameters.gravatarEmail);
-}
 
 const templateParameters = Object.assign({
 	title: '',
 	description: '',
-	gravatarHash: '',
-	gravatarEmail: '',
-	pictureText: '',
 	pageTitle: '',
-	portfolioEntries: {}
+	portfolioEntries: []
 }, portfolioParameters);
 
-templateParameters.portfolioEntries.github = portfolioEntries.githubEntry(portfolioParameters.portfolio.github);
-templateParameters.portfolioEntries.linkedIn = portfolioEntries.linkedInEntry(portfolioParameters.portfolio.linkedIn);
-templateParameters.portfolioEntries.twitter = portfolioEntries.twitterEntry(portfolioParameters.portfolio.twitter);
-templateParameters.portfolioEntries.bitbucket = portfolioEntries.bitbucketEntry(portfolioParameters.portfolio.bitbucket);
-templateParameters.portfolioEntries.email = portfolioEntries.emailEntry(portfolioParameters.portfolio.email);
-templateParameters.portfolioEntries.stackOverflow = portfolioEntries.stackOverflowEntry(portfolioParameters.portfolio.stackOverflow);
-templateParameters.portfolioEntries.stackExchange = portfolioEntries.stackExchangeEntry(portfolioParameters.portfolio.stackExchange);
+templateParameters.headerPictureEntry = components.headerPictureEntry(portfolioParameters.headerPicture);
+
+Object.keys(portfolioParameters.portfolio).forEach((key) => {
+	if(_.isFunction(components.portfolio[key])){
+		let portfolioParameter = portfolioParameters.portfolio[key];
+		templateParameters.portfolioEntries[portfolioParameter.order] = components.portfolio[key](portfolioParameter);
+	}
+});
 
 module.exports = {
 	devServer: {
 		contentBase: './dist'
 	},
 	output: {
-		path: path.resolve(__dirname, 'dist'),
-    	filename: 'index.js'
+		path: path.resolve(__dirname, 'dist')
 	},
 	plugins: [
 		new HtmlWebpackPlugin({
-		    title: 'Mark Holmes',
 		    template: './src/index.html',
 		    templateParameters: templateParameters
 		})

@@ -1,0 +1,39 @@
+{
+    "title": "Developer Name",
+    "pageTitle": "Browser Title Bar",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ac laoreet dui. Suspendisse sed risus elit. Sed a commodo leo. Proin vulputate convallis ultrices. Praesent ut mi vitae dui interdum ullamcorper sit amet sit amet justo. Sed non fringilla felis. Curabitur vel elementum sem, tempus tincidunt justo. Nunc et nibh imperdiet, mollis mi ut, tristique orci. Mauris sit amet ligula purus. Etiam fermentum, neque quis cursus posuere, ligula magna vehicula diam, ut dapibus velit ex id ante.",
+    "headerPicture": {
+        "gravatarEmail": "test@gravatar.com",
+        "pictureText": "Alternate text for your picture",
+    },
+    "portfolio": {
+        "github": {
+            "username": "github",
+            "order": 0
+        },
+        "twitter": {
+            "handle": "twitter",
+            "order": 1
+        },
+        "linkedIn": {
+            "username": "jeffweiner08",
+            "order": 2
+        },
+        "email": {
+            "address": "email@example.com",
+            "order": 3
+        },
+        "bitbucket": {
+            "username": "example",
+            "order": 4
+        },
+        "stackOverflow": {
+            "id": "1",
+            "order": 5
+        },
+        "stackExchange": {
+            "id": "1",
+            "order": 6
+        }
+    }
+}

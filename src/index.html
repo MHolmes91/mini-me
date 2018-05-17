@@ -34,6 +34,11 @@
 				padding: 32px;
 			}
 
+			.portfolio__element:not(.portfolio__element--github):hover .portfolio__element__icon,.portfolio__element:not(.portfolio__element--github):active .portfolio__element__icon{
+				background-color: #ee22ee;
+				transition: all  0.3s ease-in 0.1s;
+			}
+
 			/*Github has its own circle*/
 			.portfolio__element--github .portfolio__element__icon{
 				width: 128px;
@@ -43,6 +48,11 @@
 				border-radius: 0;
 				color: white;
 				background-color: initial;
+			}
+
+			.portfolio__element--github:hover .portfolio__element__icon,.portfolio__element--github:active .portfolio__element__icon{
+				color: #ee22ee;
+				transition: all 0.3s ease-in 0.1s;	/*Size transitions must be done differently*/
 			}
 
 			.portfolio__element--github .portfolio__element__icon i{
@@ -74,18 +84,10 @@
 					${description}
 				</p>
 			</div>
-			<div class="header__picture">
-				<img src="https://gravatar.com/avatar/${gravatarHash}?s=256" alt="${pictureText ? pictureText : ''}" />
-			</div>
+			${headerPictureEntry}
 		</div>
 		<div class="portfolio">
-			${portfolioEntries.github ? portfolioEntries.github : ''}
-			${portfolioEntries.linkedIn ? portfolioEntries.linkedIn : ''}
-			${portfolioEntries.twitter ? portfolioEntries.twitter : ''}
-			${portfolioEntries.bitbucket ? portfolioEntries.bitbucket : ''}
-			${portfolioEntries.email ? portfolioEntries.email : ''}
-			${portfolioEntries.stackOverflow ? portfolioEntries.stackOverflow : ''}
-			${portfolioEntries.stackExchange ? portfolioEntries.stackExchange : ''}
+			${portfolioEntries.reduce((str, entry) => str + entry,'')}
 		</div>
 	</body>
 </html>
