@@ -1,34 +1,9 @@
 <html>
-	<header>
+	<head>
 		<title>${pageTitle ? pageTitle : title}</title>
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+		<style>${styleSheet}</style>
 		<style>
-			body{
-				color: #CCCCCC;
-				background-color: #111111;
-			}
-
-			.header{
-				display: flex;
-				flex-flow: row wrap;
-				justify-content: space-around;
-				margin: 32px 16px 96px 16px;
-			}
-
-			.header__text{
-				max-width: 75%;
-				margin: 0px 32px 32px 0px;
-			}
-
-			.header__picture img{
-				border-radius: 50%;
-			}
-
-			.portfolio{
-				display: flex;
-				flex-flow: row wrap;
-				justify-content: space-around;
-			}
 			.portfolio__element{
 				display: block;
 				padding: 32px;
@@ -73,10 +48,10 @@
 				font-size: 70px;
 			}
 		</style>
-	</header>
-	<body>
-		<div class="header">
-			<div class="header__text">
+	</head>
+	<body class="${styles.classes.body}">
+		<div class="${styles.classes.header}">
+			<div class="${styles.classes.headerText}">
 				<h1 class="header__title">
 					${title}
 				</h1>
@@ -86,7 +61,7 @@
 			</div>
 			${headerPictureEntry}
 		</div>
-		<div class="portfolio">
+		<div class="${styles.classes.portfolio}">
 			${portfolioEntries.reduce((str, entry) => str + entry,'')}
 		</div>
 	</body>

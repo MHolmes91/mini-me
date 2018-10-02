@@ -2,7 +2,7 @@ const _ = require('lodash');
 
 const consts = require('./consts.js');
 
-const portfolioEntry = (parameters) => parameters.linkUrl
+const portfolioEntry = (parameters, styles) => parameters.linkUrl
 	? `<a href="${parameters.linkUrl}" target="${parameters.linkTarget ? parameters.linkTarget : '_blank'}" title="${parameters.linkTitle}" class="portfolio__element portfolio__element--${parameters.portfolioElementType}">
 		<div class="portfolio__element__icon">
 			<i class="${parameters.faClass}"></i>
