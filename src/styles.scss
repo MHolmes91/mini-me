@@ -1,6 +1,17 @@
+$primary: #ffddff;
+$secondary: #ad71fb;
+$background: #111111;
+
 body{
-  color: #CCCCCC;
-  background-color: #111111;
+  color: $primary;
+  font-family: 'lato', sans-serif;
+  background-color: $background;
+}
+
+
+h1,h2,h3,h4,h5{
+	font-family:'PT Sans', sans-serif;
+	font-weight:700;
 }
 
 .header{
@@ -10,7 +21,7 @@ body{
   margin: 32px 16px 96px 16px;
 
   &__text{
-    max-width: 75%;
+    max-width: 60%;
     margin: 0px 32px 32px 0px;
   }
 
@@ -30,7 +41,7 @@ body{
 
     &__icon{
       background-color: white;
-      color: #111111;
+      color: $background;
       width: 70px;
       height: 70px;
       padding: 29px;
@@ -43,8 +54,8 @@ body{
     }
 
     &:not(.portfolio__element--github):hover .portfolio__element__icon,.portfolio__element:not(.portfolio__element--github):active .portfolio__element__icon{
-      background-color: #ee22ee;
-      transition: all  0.3s ease-in 0.1s;
+      background-color: $secondary;
+      transition: all  0.2s ease-in 0.1s;
     }
 
     /*Github has its own circle*/
@@ -64,8 +75,8 @@ body{
       }
 
       &:hover .portfolio__element__icon,.portfolio__element--github:active .portfolio__element__icon{
-        color: #ee22ee;
-        transition: all 0.3s ease-in 0.1s;	/*Size transitions must be done differently*/
+        color: $secondary;
+        transition: all 0.2s ease-in 0.1s;	/*Size transitions must be done differently*/
       }
     } 
   }

@@ -8,9 +8,7 @@ Add Generic link/project
 Add Generic app/project
 Languages
 
-Hover state
 favicon
-Font
 Breakpoints
 
 GA scripts

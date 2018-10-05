@@ -15,6 +15,10 @@ const templateParameters = Object.assign({
 
 templateParameters.headerPictureEntry = components.headerPictureEntry(portfolioParameters.headerPicture)
 
+templateParameters.description = Array.isArray(templateParameters.description)
+	? templateParameters.description.reduce((str, entry) => str + components.descriptionEntry(entry), '')
+	: components.descriptionEntry(templateParameters.description);
+
 Object.keys(portfolioParameters.portfolio).forEach((key) => {
 	if(_.isFunction(components.portfolio[key])){
 		const portfolioParameter = portfolioParameters.portfolio[key]

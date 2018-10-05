@@ -23,5 +23,8 @@ export default {
 					</div>`;
 		}
 	},
+	descriptionEntry: entry => (
+		`<p>${entry}</p>`
+	),
 	portfolio: portfolioComponents
 };
