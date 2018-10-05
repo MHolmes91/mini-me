@@ -13,6 +13,7 @@ Breakpoints
 
 GA scripts
 
+Custom colors
 Audits
 Minify JS and SCSS
 Source maps
