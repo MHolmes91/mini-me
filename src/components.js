@@ -51,8 +51,6 @@ export default {
 			return `<link rel="icon" type="${faviconType}" href="${linkUrl}">`
 		}
 	},
-	descriptionEntry: entry => (
-		`<p>${entry}</p>`
-	),
+	descriptionEntry: entry => entry,
 	portfolio: portfolioComponents
 };
