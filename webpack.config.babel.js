@@ -1,19 +1,19 @@
 /*
 Todo:
 
-Refresh on portfolio.json change
-Manage deps
+Breakpoints
+Custom colors
+Favicon (Arbitrary Files)
 
 Add Generic link/project
 Add Generic app/project
 Languages
 
-favicon
-Breakpoints
+Refresh on any changes
+Manage deps
 
 GA scripts
 
-Custom colors
 Audits
 Minify JS and SCSS
 Source maps
@@ -21,7 +21,6 @@ Source maps
 import path from 'path'
 import fs from 'fs'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
-
 import templateParameters from './src/templateParameters.js'
 
 export default {

@@ -1,8 +1,9 @@
 <html>
 	<head>
 		<title>${pageTitle ? pageTitle : title}</title>
+		${favicon}
 		<link href='//fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic|PT+Sans:400,700|PT+Sans+Narrow:400,700|Inconsolata:400' rel='stylesheet' type='text/css'>
-		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+		<link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
 	</head>
 	<body>
 		<div class="header">
@@ -17,7 +18,7 @@
 			${headerPictureEntry}
 		</div>
 		<div class="portfolio">
-			${portfolioEntries.reduce((str, entry) => str + entry,'')}
+			${portfolioEntries.reduce((str, entry) => str + entry, '')}
 		</div>
 	</body>
 </html>

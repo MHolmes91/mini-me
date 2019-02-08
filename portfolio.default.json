@@ -1,10 +1,16 @@
 {
     "title": "Developer Name",
     "pageTitle": "Browser Title Bar",
+    "favicon": {
+        "linkUrl": "http://example.com/favicon.ico",
+        "useGravatar": false
+	},
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ac laoreet dui. Suspendisse sed risus elit. Sed a commodo leo. Proin vulputate convallis ultrices. Praesent ut mi vitae dui interdum ullamcorper sit amet sit amet justo. Sed non fringilla felis. Curabitur vel elementum sem, tempus tincidunt justo. Nunc et nibh imperdiet, mollis mi ut, tristique orci. Mauris sit amet ligula purus. Etiam fermentum, neque quis cursus posuere, ligula magna vehicula diam, ut dapibus velit ex id ante.",
+    "gravatarEmail": "test@gravatar.com",
     "headerPicture": {
-        "gravatarEmail": "test@gravatar.com",
-        "pictureText": "Alternate text for your picture",
+        "linkUrl": "http://example.com/header.png",
+        "useGravatar": false,
+        "pictureText": "Alternate text for your picture"
     },
     "portfolio": {
         "github": {
