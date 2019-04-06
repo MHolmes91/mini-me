@@ -1,13 +1,13 @@
 /*
 Todo:
 
-Breakpoints
 Custom colors
-Favicon (Arbitrary Files)
 
 Add Generic link/project
 Add Generic app/project
-Languages
+
+Programming Languages
+Favicon (Arbitrary Files)
 
 Refresh on any changes
 Manage deps

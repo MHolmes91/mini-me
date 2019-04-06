@@ -2,3 +2,4 @@
 /portfolio.json
 /dist
 !*/.empty
+*.swp
