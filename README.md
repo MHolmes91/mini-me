@@ -15,6 +15,7 @@ This is a static site generator which generates a developer portfolio website.
 * Custom Colors
 * Custom portfolio items
 * Custom fonts and sizing
+* Custom icon library not limited to fontawesome
 * Better explanation of available configuration options
 * Version 2.0
     * Migrate to a standard site generator framework
