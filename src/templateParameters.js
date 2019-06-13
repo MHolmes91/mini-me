@@ -15,7 +15,7 @@ const templateParameters = {
 templateParameters.headerPictureEntry = components.headerPictureEntry({ gravatarEmail: portfolioParameters.gravatarEmail, ...portfolioParameters.headerPicture })
 
 templateParameters.description = Array.isArray(templateParameters.description)
-	? templateParameters.description.reduce((str, entry) => str + components.descriptionEntry(entry), '')
+	? templateParameters.description.reduce((str, entry) => str + components.descriptionEntry(entry) + '<br />', '')
 	: components.descriptionEntry(templateParameters.description);
 
 Object.keys(portfolioParameters.portfolio).forEach(key => {
