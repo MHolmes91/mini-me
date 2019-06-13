@@ -52,5 +52,6 @@ export default {
 		}
 	},
 	descriptionEntry: entry => entry,
-	portfolio: portfolioComponents
+	portfolio: portfolioComponents,
+	footer: contents => `<div class="footer">${contents}</div>`
 };

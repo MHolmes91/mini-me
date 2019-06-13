@@ -36,4 +36,6 @@ templateParameters.portfolioEntries = templateParameters.portfolioEntries.filter
 
 templateParameters.favicon = components.faviconEntry({ gravatarEmail: portfolioParameters.gravatarEmail, ...portfolioParameters.favicon})
 
+templateParameters.footer = portfolioParameters.footer ? components.footer(portfolioParameters.footer) : null
+
 export default templateParameters
