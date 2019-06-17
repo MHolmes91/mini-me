@@ -12,6 +12,7 @@ This is a static site generator which generates a developer portfolio website.
     * The results of the build can be found in the `/dist` folder.
 
 ## Future Features
+* Google Analytics
 * Custom Colors
 * Custom portfolio items
 * Custom fonts and sizing
