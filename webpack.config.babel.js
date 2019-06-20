@@ -1,23 +1,3 @@
-/*
-Todo:
-
-Custom colors
-
-Add Generic link/project
-Add Generic app/project
-
-Programming Languages
-Favicon (Arbitrary Files)
-
-Refresh on any changes
-Manage deps
-
-GA scripts
-
-Audits
-Minify JS and SCSS
-Source maps
- */
 import path from 'path'
 import fs from 'fs'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
