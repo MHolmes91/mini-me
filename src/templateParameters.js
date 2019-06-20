@@ -38,4 +38,17 @@ templateParameters.favicon = components.faviconEntry({ gravatarEmail: portfolioP
 
 templateParameters.footer = portfolioParameters.footer ? components.footer(portfolioParameters.footer) : null
 
+templateParameters.googleAnalytics = portfolioParameters.googleAnalyticsID ? `
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=${portfolioParameters.googleAnalyticsID}"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', '${portfolioParameters.googleAnalyticsID}');
+</script>
+<!-- End Google Analytics -->
+` : ''
+
 export default templateParameters
