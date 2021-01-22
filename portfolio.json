@@ -1,0 +1,42 @@
+{
+  "title": "Mark Holmes",
+  "pageTitle": "Mark Holmes' personal website",
+  "favicon": {
+    "useGravatar": true
+  },
+  "description": "I am a Minneapolis Software Engineer specializing in the web. Though I have worked mostly with Javascript, I consider myself a polyglot and have worked in, and am interested other programming languages. I am particularly interested in peer-to-peer interactions through WebRTC, blockchain distributed applications, and other technologies. Outside of my profession, I enjoy music, video games, skiing, and football.",
+  "gravatarEmail": "contact@markholm.es",
+  "headerPicture": {
+    "useGravatar": true,
+    "pictureText": "A picture of a Strapping Young Lad that you would want to work with or crack open a cold one with."
+  },
+  "portfolio": {
+    "github": {
+      "username": "MHolmes91",
+      "order": 1
+    },
+    "twitter": {
+      "handle": "markholmDOTes",
+      "order": 6
+    },
+    "linkedIn": {
+      "username": "markholmDOTes",
+      "order": 4
+    },
+    "email": {
+      "address": "contact@markholm.es",
+      "order": 5
+    },
+    "bitbucket": {
+      "username": "mholmes91",
+      "order": 2
+    },
+    "stackOverflow": {
+      "id": "3765769",
+      "order": 3
+    },
+    "stackExchange-disabled": {
+      "id": "4648196"
+    }
+  }
+}
