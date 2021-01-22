@@ -21,3 +21,14 @@ export const faviconFileToMimeType = (faviconFileName: string) => {
 
 export const gravatarUrl = (gravatarEmail: string) =>
   `https://gravatar.com/avatar/${md5(gravatarEmail)}?s=256`;
+
+export enum EntryType {
+  GitHub = 'github',
+  BitBucket = 'bitbucket',
+  GitLab = 'gitlab', // TODO
+  LinkedIn = 'linkedIn',
+  Twitter = 'twitter',
+  Email = 'email',
+  StackOverflow = 'stackOverflow',
+  StackExchange = 'stackExchange'
+}

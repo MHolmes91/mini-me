@@ -5,6 +5,7 @@ import { Description } from "../components/Description";
 import { HeaderPicture } from "../components/HeaderPicture";
 import { Favicon } from "../components/Favicon";
 import { Footer } from "../components/Footer";
+import { Portfolio } from "../components/Portfolio";
 
 export const getStaticProps = () => ({
   props: {
@@ -21,6 +22,7 @@ const Home = ({ portfolioParameters }) => {
     favicon,
     gravatarEmail,
     footer,
+    portfolio
   } = portfolioParameters;
   return (
     <div>
@@ -28,6 +30,7 @@ const Home = ({ portfolioParameters }) => {
 
       <Head>
         {/* TODO Analytics */}
+        {/* TODO Style */}
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link
           href="//fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic|PT+Sans:400,700|PT+Sans+Narrow:400,700|Inconsolata:400"
@@ -50,6 +53,7 @@ const Home = ({ portfolioParameters }) => {
         </div>
         <HeaderPicture {...headerPicture} gravatarEmail={gravatarEmail} />
       </div>
+      <Portfolio entries={portfolio} />
       <div className="portfolio">
         {/* ${portfolioEntries.reduce((str, entry) => str + entry, "")} */}
       </div>
