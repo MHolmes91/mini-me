@@ -3,7 +3,7 @@
 body {
   color: $primary;
   font-family: $bodyFamily;
-  background-color: $background;
+  background-image: linear-gradient(170deg, $background 90%, #ffef00 97%, #ff0052 99%);
 }
 
 h1,

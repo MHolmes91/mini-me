@@ -1,5 +1,4 @@
 import Head from "next/head";
-import styles from "../styles/Home.module.scss";
 import fs from "fs";
 import { Favicon } from "../components/Favicon";
 import { Footer } from "../components/Footer";
@@ -24,6 +23,7 @@ const Home = ({
     <Head>
       {/* TODO Typing */}
       {/* TODO Analytics */}
+      {/* TODO React FontAwesome */}
       {/* TODO Style */}
       {/* TODO Change fonts and stuff */}
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
