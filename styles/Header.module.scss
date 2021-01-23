@@ -1,0 +1,25 @@
+@media only screen and (max-width: 650px) {
+  .header {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    margin: 32px 16px 32px 16px;
+  }
+
+  .text{
+    max-width: 100%;
+    margin: 0px 0px 32px 0px;
+  }
+}
+
+.header {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  margin: 32px 16px 96px 16px;
+
+  .text {
+    max-width: 50%;
+    margin: 0px 32px 32px 0px;
+  }
+}

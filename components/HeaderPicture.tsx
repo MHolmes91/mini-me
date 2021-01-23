@@ -1,3 +1,4 @@
+import styles from "../styles/HeaderPicture.module.scss";
 import { gravatarUrl } from "../utils";
 
 export const HeaderPicture = ({
@@ -15,7 +16,7 @@ export const HeaderPicture = ({
   };
 
   return (
-    <div className="header__picture">
+    <div className={styles.picture}>
       <img {...imgParameters} />
     </div>
   );

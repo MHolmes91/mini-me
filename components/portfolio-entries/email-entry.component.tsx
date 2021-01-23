@@ -5,6 +5,6 @@ export const EmailEntry = ({address = ''}) => {
   const linkTitle = `Email ${address ? address : 'me'}`
 
   return (
-    <PortfolioEntry linkUrl={linkUrl} linkTitle={linkTitle} faClass="fab fa-at" entryClass="email" linkTarget="_self" />
+    <PortfolioEntry linkUrl={linkUrl} linkTitle={linkTitle} faClass="fas fa-at" entryClass="email" linkTarget="_self" />
   )
 }
