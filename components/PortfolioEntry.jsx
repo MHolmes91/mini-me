@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
   faGithub,
   faTwitter,
+  faBluesky,
   faLinkedinIn,
   faBitbucket,
   faStackOverflow,
@@ -32,3 +33,4 @@ export const EmailEntry = (props) => <PortfolioEntry {...props} icon={faAt} type
 export const BitbucketEntry = (props) => <PortfolioEntry {...props} icon={faBitbucket} type="bitbucket" />
 export const StackOverflowEntry = (props) => <PortfolioEntry {...props} icon={faStackOverflow} type="stack-overflow" />
 export const StackExchangeEntry = (props) => <PortfolioEntry {...props} icon={faStackExchange} type="stack-exchange" />
+export const BlueskyEntry = (props) => <PortfolioEntry {...props} icon={faBluesky} type="bluesky" />

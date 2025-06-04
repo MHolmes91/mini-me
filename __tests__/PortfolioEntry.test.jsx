@@ -5,6 +5,7 @@ import PortfolioEntry, {
   LinkedInEntry,
   EmailEntry,
   BitbucketEntry,
+  BlueskyEntry,
   StackOverflowEntry,
   StackExchangeEntry,
 } from '../components/PortfolioEntry'
@@ -16,6 +17,7 @@ const wrappers = {
   linkedin: [LinkedInEntry, 'linkedin-in'],
   email: [EmailEntry, 'at'],
   bitbucket: [BitbucketEntry, 'bitbucket'],
+  bluesky: [BlueskyEntry, 'bluesky'],
   'stack-overflow': [StackOverflowEntry, 'stack-overflow'],
   'stack-exchange': [StackExchangeEntry, 'stack-exchange'],
 }

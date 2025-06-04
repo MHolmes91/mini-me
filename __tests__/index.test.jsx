@@ -20,6 +20,7 @@ describe('Home page', () => {
     const entries = [
       { url: 'https://github.com/u', title: 'GitHub', type: 'github' },
       { url: 'https://twitter.com/u', title: 'Twitter', type: 'twitter' },
+      { url: 'https://bsky.app/profile/u.bsky.social', title: 'Bluesky', type: 'bluesky' },
       { url: 'https://www.linkedin.com/in/u', title: 'LinkedIn', type: 'linkedin' },
       { url: 'mailto:u@example.com', title: 'Email u@example.com', type: 'email', target: '_self' },
       { url: 'https://bitbucket.org/u', title: 'Bitbucket', type: 'bitbucket' },
