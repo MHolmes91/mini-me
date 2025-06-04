@@ -51,16 +51,20 @@ export default function Home({
           <style>{`:root{${styleVars.join(";")};}`}</style>
         )}
       </Head>
-      <Header
-        title={data.title}
-        description={description}
-        pictureUrl={headerPictureUrl}
-        pictureText={data.headerPicture?.pictureText}
-      />
-      <div className="portfolio">
-        <PortfolioEntries entries={portfolioEntries} />
+      <div className="page-container">
+        <main className="content">
+          <Header
+            title={data.title}
+            description={description}
+            pictureUrl={headerPictureUrl}
+            pictureText={data.headerPicture?.pictureText}
+          />
+          <div className="portfolio">
+            <PortfolioEntries entries={portfolioEntries} />
+          </div>
+        </main>
+        {data.footer && <Footer content={data.footer} />}
       </div>
-      {data.footer && <Footer content={data.footer} />}
     </>
   );
 }
