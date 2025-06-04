@@ -64,15 +64,6 @@ export async function getStaticProps() {
   }
 }
 
-const icons = {
-  github: faGithub,
-  twitter: faTwitter,
-  linkedin: faLinkedinIn,
-  email: faAt,
-  bitbucket: faBitbucket,
-  'stack-overflow': faStackOverflow,
-  'stack-exchange': faStackExchange,
-}
 
 export default function Home({ data, headerPictureUrl, faviconUrl, faviconType, portfolioEntries, description }) {
   const styleVars = []
