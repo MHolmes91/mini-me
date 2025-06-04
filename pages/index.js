@@ -1,5 +1,15 @@
 import Head from 'next/head'
 import Script from 'next/script'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {
+  faGithub,
+  faTwitter,
+  faLinkedinIn,
+  faBitbucket,
+  faStackOverflow,
+  faStackExchange,
+} from '@fortawesome/free-brands-svg-icons'
+import { faAt } from '@fortawesome/free-solid-svg-icons'
 
 export async function getStaticProps() {
   const fs = require('fs')
@@ -43,13 +53,13 @@ export async function getStaticProps() {
     }
   }
   const p = data.portfolio || {}
-  if (p.github) assign(p.github.order, { url: p.github.username ? `https://github.com/${p.github.username}` : null, title: 'GitHub', fa: 'fab fa-github', type: 'github' })
-  if (p.twitter) assign(p.twitter.order, { url: p.twitter.handle ? `https://twitter.com/${p.twitter.handle}` : null, title: 'Twitter', fa: 'fab fa-twitter', type: 'twitter' })
-  if (p.linkedIn) assign(p.linkedIn.order, { url: p.linkedIn.username ? `https://www.linkedin.com/in/${p.linkedIn.username}` : null, title: 'LinkedIn', fa: 'fab fa-linkedin-in', type: 'linkedin' })
-  if (p.email) assign(p.email.order, { url: p.email.address ? `mailto:${p.email.address}` : null, title: `Email ${p.email.address || 'me'}`, fa: 'fas fa-at', type: 'email', target: '_self' })
-  if (p.bitbucket) assign(p.bitbucket.order, { url: p.bitbucket.username ? `https://bitbucket.org/${p.bitbucket.username}` : null, title: 'Bitbucket', fa: 'fab fa-bitbucket', type: 'bitbucket' })
-  if (p.stackOverflow) assign(p.stackOverflow.order, { url: p.stackOverflow.id ? `https://stackoverflow.com/users/${p.stackOverflow.id}` : null, title: 'Stack Overflow', fa: 'fab fa-stack-overflow', type: 'stack-overflow' })
-  if (p.stackExchange) assign(p.stackExchange.order, { url: p.stackExchange.id ? `https://stackexchange.com/users/${p.stackExchange.id}` : null, title: 'Stack Exchange', fa: 'fab fa-stack-exchange', type: 'stack-exchange' })
+  if (p.github) assign(p.github.order, { url: p.github.username ? `https://github.com/${p.github.username}` : null, title: 'GitHub', type: 'github' })
+  if (p.twitter) assign(p.twitter.order, { url: p.twitter.handle ? `https://twitter.com/${p.twitter.handle}` : null, title: 'Twitter', type: 'twitter' })
+  if (p.linkedIn) assign(p.linkedIn.order, { url: p.linkedIn.username ? `https://www.linkedin.com/in/${p.linkedIn.username}` : null, title: 'LinkedIn', type: 'linkedin' })
+  if (p.email) assign(p.email.order, { url: p.email.address ? `mailto:${p.email.address}` : null, title: `Email ${p.email.address || 'me'}`, type: 'email', target: '_self' })
+  if (p.bitbucket) assign(p.bitbucket.order, { url: p.bitbucket.username ? `https://bitbucket.org/${p.bitbucket.username}` : null, title: 'Bitbucket', type: 'bitbucket' })
+  if (p.stackOverflow) assign(p.stackOverflow.order, { url: p.stackOverflow.id ? `https://stackoverflow.com/users/${p.stackOverflow.id}` : null, title: 'Stack Overflow', type: 'stack-overflow' })
+  if (p.stackExchange) assign(p.stackExchange.order, { url: p.stackExchange.id ? `https://stackexchange.com/users/${p.stackExchange.id}` : null, title: 'Stack Exchange', type: 'stack-exchange' })
 
   const portfolioEntries = entries.filter(Boolean)
 
@@ -58,6 +68,16 @@ export async function getStaticProps() {
   return {
     props: { data, headerPictureUrl, faviconUrl, faviconType, portfolioEntries, description }
   }
+}
+
+const icons = {
+  github: faGithub,
+  twitter: faTwitter,
+  linkedin: faLinkedinIn,
+  email: faAt,
+  bitbucket: faBitbucket,
+  'stack-overflow': faStackOverflow,
+  'stack-exchange': faStackExchange,
 }
 
 export default function Home({ data, headerPictureUrl, faviconUrl, faviconType, portfolioEntries, description }) {
@@ -69,7 +89,6 @@ export default function Home({ data, headerPictureUrl, faviconUrl, faviconType, 
         {faviconUrl && <link rel="icon" type={faviconType} href={faviconUrl} />}
         <link href='//fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic|PT+Sans:400,700|PT+Sans+Narrow:400,700|Inconsolata:400' rel='stylesheet' type='text/css' />
       </Head>
-      <Script src="https://kit.fontawesome.com/f938125ef2.js" strategy="afterInteractive" />
       {data.googleAnalyticsID && (
         <>
           <Script src={`https://www.googletagmanager.com/gtag/js?id=${data.googleAnalyticsID}`} strategy="afterInteractive" />
@@ -94,13 +113,13 @@ export default function Home({ data, headerPictureUrl, faviconUrl, faviconType, 
           entry.url ? (
             <a key={idx} href={entry.url} target={entry.target || '_blank'} title={entry.title} className={`portfolio__element portfolio__element--${entry.type}`}>
               <div className="portfolio__element__icon">
-                <i className={entry.fa}></i>
+                <FontAwesomeIcon icon={icons[entry.type]} />
               </div>
             </a>
           ) : (
             <div key={idx} className={`portfolio__element portfolio__element--${entry.type}`}>
               <div className="portfolio__element__icon">
-                <i className={entry.fa}></i>
+                <FontAwesomeIcon icon={icons[entry.type]} />
               </div>
             </div>
           )
