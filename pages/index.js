@@ -1,11 +1,17 @@
 import Head from 'next/head'
+import Script from 'next/script'
 
 export async function getStaticProps() {
   const fs = require('fs')
   const path = require('path')
   const crypto = require('crypto')
   const dataPath = path.join(process.cwd(), 'portfolio.json')
-  const raw = fs.readFileSync(dataPath, 'utf8')
+  let raw
+  try {
+    raw = fs.readFileSync(dataPath, 'utf8')
+  } catch (err) {
+    raw = fs.readFileSync(path.join(process.cwd(), 'portfolio.default.json'), 'utf8')
+  }
   const data = JSON.parse(raw)
 
   const md5 = data.gravatarEmail
@@ -62,14 +68,16 @@ export default function Home({ data, headerPictureUrl, faviconUrl, faviconType, 
         <title>{data.pageTitle ? data.pageTitle : data.title}</title>
         {faviconUrl && <link rel="icon" type={faviconType} href={faviconUrl} />}
         <link href='//fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic|PT+Sans:400,700|PT+Sans+Narrow:400,700|Inconsolata:400' rel='stylesheet' type='text/css' />
-        <script src="https://kit.fontawesome.com/f938125ef2.js"></script>
-        {data.googleAnalyticsID && (
-          <>
-            <script async src={`https://www.googletagmanager.com/gtag/js?id=${data.googleAnalyticsID}`}></script>
-            <script dangerouslySetInnerHTML={{__html: `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', '${data.googleAnalyticsID}');`}} />
-          </>
-        )}
       </Head>
+      <Script src="https://kit.fontawesome.com/f938125ef2.js" strategy="afterInteractive" />
+      {data.googleAnalyticsID && (
+        <>
+          <Script src={`https://www.googletagmanager.com/gtag/js?id=${data.googleAnalyticsID}`} strategy="afterInteractive" />
+          <Script id="ga" strategy="afterInteractive" dangerouslySetInnerHTML={{
+            __html: `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', '${data.googleAnalyticsID}');`
+          }} />
+        </>
+      )}
       <div className="header">
         <div className="header__text">
           <h1 className="header__title">{data.title}</h1>
