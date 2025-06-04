@@ -5,6 +5,7 @@ import PortfolioEntry, {
   LinkedInEntry,
   EmailEntry,
   BitbucketEntry,
+  BlueskyEntry,
   StackOverflowEntry,
   StackExchangeEntry,
 } from './PortfolioEntry'
@@ -15,6 +16,7 @@ const map = {
   linkedin: LinkedInEntry,
   email: EmailEntry,
   bitbucket: BitbucketEntry,
+  bluesky: BlueskyEntry,
   'stack-overflow': StackOverflowEntry,
   'stack-exchange': StackExchangeEntry,
 }

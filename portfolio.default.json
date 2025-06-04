@@ -37,25 +37,29 @@
             "handle": "twitter",
             "order": 1
         },
+        "bluesky": {
+            "handle": "example.bsky.social",
+            "order": 2
+        },
         "linkedIn": {
             "username": "jeffweiner08",
-            "order": 2
+            "order": 3
         },
         "email": {
             "address": "email@example.com",
-            "order": 3
+            "order": 4
         },
         "bitbucket": {
             "username": "example",
-            "order": 4
+            "order": 5
         },
         "stackOverflow": {
             "id": "1",
-            "order": 5
+            "order": 6
         },
         "stackExchange": {
             "id": "1",
-            "order": 6
+            "order": 7
         }
     }
 }
