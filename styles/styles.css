@@ -1,0 +1,97 @@
+body {
+  color: #ffddff;
+  font-family: "lato", sans-serif;
+  background-color: #111111;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: "PT Sans", sans-serif;
+  font-weight: 700;
+  color: #ad71fb;
+}
+
+a {
+  color: #ad71fb;
+}
+a:visited, a:hover {
+  color: #ffddff;
+}
+
+@media only screen and (max-width: 650px) {
+  body .header {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    margin: 32px 16px 32px 16px;
+  }
+  body .header__text {
+    max-width: 100%;
+    margin: 0px 0px 32px 0px;
+  }
+  body .header__picture img {
+    border-radius: 50%;
+  }
+}
+.header {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  margin: 32px 16px 96px 16px;
+}
+.header__text {
+  max-width: 50%;
+  margin: 0px 32px 32px 0px;
+}
+.header__picture img {
+  border-radius: 50%;
+}
+
+.portfolio {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+.portfolio__element {
+  display: block;
+  padding: 24px;
+  /*Github has its own circle*/
+}
+.portfolio__element__icon {
+  background-color: #dfdfdf;
+  color: #111111;
+  width: 70px;
+  height: 70px;
+  padding: 29px;
+  border-radius: 50%;
+  text-align: center;
+}
+.portfolio__element__icon > i {
+  font-size: 70px;
+}
+.portfolio__element:not(.portfolio__element--github):hover .portfolio__element__icon, .portfolio__element .portfolio__element:not(.portfolio__element--github):active .portfolio__element__icon {
+  background-color: #ad71fb;
+  transition: all 0.2s ease-in 0.1s;
+}
+.portfolio__element--github .portfolio__element__icon {
+  width: 128px;
+  height: 128px;
+  text-align: center;
+  padding: 0;
+  border-radius: 0;
+  color: #dfdfdf;
+  background-color: initial;
+}
+.portfolio__element--github .portfolio__element__icon i {
+  font-size: 128px;
+}
+.portfolio__element--github:hover .portfolio__element__icon, .portfolio__element--github .portfolio__element--github:active .portfolio__element__icon {
+  color: #ad71fb;
+  transition: all 0.2s ease-in 0.1s; /*Size transitions must be done differently*/
+}
+
+.footer {
+  font-size: 12px;
+  margin-top: 24px;
+  margin-left: 16px;
+}
+

@@ -1,27 +1,19 @@
 {
   "name": "mini-me",
   "version": "1.0.0",
-  "description": "A miniature developer portfolio website.",
+  "description": "A miniature developer portfolio website built with Next.js.",
   "scripts": {
-    "test": "echo \"I haven't made tests yet...\" && exit 1",
-    "start": "webpack-dev-server --mode=development --host 0.0.0.0",
-    "build": "webpack --mode=production"
+    "dev": "next dev",
+    "build": "next build",
+    "export": "next export",
+    "start": "next start",
+    "test": "echo \"No tests yet...\" && exit 0"
   },
   "author": "Mark Holmes",
   "license": "MIT",
-  "devDependencies": {
-    "@babel/cli": "^7.1.2",
-    "@babel/core": "^7.1.2",
-    "@babel/preset-env": "^7.1.0",
-    "@babel/register": "^7.0.0",
-    "css-loader": "^1.0.0",
-    "html-webpack-plugin": "^3.2.0",
-    "node-sass": "^4.9.3",
-    "sass-loader": "^7.1.0",
-    "style-loader": "^0.23.0",
-    "webpack": "^4.8.3",
-    "webpack-cli": "^2.1.3",
-    "webpack-dev-server": "^3.1.4"
-  },
-  "dependencies": {}
+  "dependencies": {
+    "next": "13.5.6",
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
+  }
 }
