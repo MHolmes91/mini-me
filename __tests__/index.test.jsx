@@ -18,13 +18,13 @@ describe('Home page', () => {
 
   it('renders all entry types with links', () => {
     const entries = [
-      { url: 'https://github.com/u', title: 'GitHub', fa: 'fab fa-github', type: 'github' },
-      { url: 'https://twitter.com/u', title: 'Twitter', fa: 'fab fa-twitter', type: 'twitter' },
-      { url: 'https://www.linkedin.com/in/u', title: 'LinkedIn', fa: 'fab fa-linkedin-in', type: 'linkedin' },
-      { url: 'mailto:u@example.com', title: 'Email u@example.com', fa: 'fas fa-at', type: 'email', target: '_self' },
-      { url: 'https://bitbucket.org/u', title: 'Bitbucket', fa: 'fab fa-bitbucket', type: 'bitbucket' },
-      { url: 'https://stackoverflow.com/users/1', title: 'Stack Overflow', fa: 'fab fa-stack-overflow', type: 'stack-overflow' },
-      { url: 'https://stackexchange.com/users/1', title: 'Stack Exchange', fa: 'fab fa-stack-exchange', type: 'stack-exchange' }
+      { url: 'https://github.com/u', title: 'GitHub', type: 'github' },
+      { url: 'https://twitter.com/u', title: 'Twitter', type: 'twitter' },
+      { url: 'https://www.linkedin.com/in/u', title: 'LinkedIn', type: 'linkedin' },
+      { url: 'mailto:u@example.com', title: 'Email u@example.com', type: 'email', target: '_self' },
+      { url: 'https://bitbucket.org/u', title: 'Bitbucket', type: 'bitbucket' },
+      { url: 'https://stackoverflow.com/users/1', title: 'Stack Overflow', type: 'stack-overflow' },
+      { url: 'https://stackexchange.com/users/1', title: 'Stack Exchange', type: 'stack-exchange' }
     ];
 
     render(<Home {...baseProps} portfolioEntries={entries} />);
@@ -40,7 +40,7 @@ describe('Home page', () => {
   });
 
   it('renders div when entry has no URL', () => {
-    const entry = { url: null, title: 'Twitter', fa: 'fab fa-twitter', type: 'twitter' };
+    const entry = { url: null, title: 'Twitter', type: 'twitter' };
     const { container } = render(<Home {...baseProps} portfolioEntries={[entry]} />);
     const element = container.querySelector('.portfolio__element--twitter');
     expect(element.tagName).toBe('DIV');
