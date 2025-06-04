@@ -1,5 +1,7 @@
 import Head from 'next/head'
 import Script from 'next/script'
+import ReactMarkdown from 'react-markdown'
+import PortfolioEntries from '../components/PortfolioEntries'
 
 export async function getStaticProps() {
   const fs = require('fs')
@@ -53,7 +55,7 @@ export async function getStaticProps() {
 
   const portfolioEntries = entries.filter(Boolean)
 
-  const description = Array.isArray(data.description) ? data.description.join('<br />') : data.description
+  const description = data.description || ''
 
   return {
     props: { data, headerPictureUrl, faviconUrl, faviconType, portfolioEntries, description }
@@ -70,18 +72,10 @@ export default function Home({ data, headerPictureUrl, faviconUrl, faviconType, 
         <link href='//fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic|PT+Sans:400,700|PT+Sans+Narrow:400,700|Inconsolata:400' rel='stylesheet' type='text/css' />
       </Head>
       <Script src="https://kit.fontawesome.com/f938125ef2.js" strategy="afterInteractive" />
-      {data.googleAnalyticsID && (
-        <>
-          <Script src={`https://www.googletagmanager.com/gtag/js?id=${data.googleAnalyticsID}`} strategy="afterInteractive" />
-          <Script id="ga" strategy="afterInteractive" dangerouslySetInnerHTML={{
-            __html: `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', '${data.googleAnalyticsID}');`
-          }} />
-        </>
-      )}
       <div className="header">
         <div className="header__text">
           <h1 className="header__title">{data.title}</h1>
-          <p className="header__description" dangerouslySetInnerHTML={{__html: description}} />
+          <ReactMarkdown className="header__description">{description}</ReactMarkdown>
         </div>
         {headerPictureUrl && (
           <div className="header__picture">
@@ -90,23 +84,13 @@ export default function Home({ data, headerPictureUrl, faviconUrl, faviconType, 
         )}
       </div>
       <div className="portfolio">
-        {portfolioEntries.map((entry, idx) => (
-          entry.url ? (
-            <a key={idx} href={entry.url} target={entry.target || '_blank'} title={entry.title} className={`portfolio__element portfolio__element--${entry.type}`}>
-              <div className="portfolio__element__icon">
-                <i className={entry.fa}></i>
-              </div>
-            </a>
-          ) : (
-            <div key={idx} className={`portfolio__element portfolio__element--${entry.type}`}>
-              <div className="portfolio__element__icon">
-                <i className={entry.fa}></i>
-              </div>
-            </div>
-          )
-        ))}
+        <PortfolioEntries entries={portfolioEntries} />
       </div>
-      {data.footer && <div className="footer" dangerouslySetInnerHTML={{__html: data.footer}} />}
+      {data.footer && (
+        <div className="footer">
+          <ReactMarkdown>{data.footer}</ReactMarkdown>
+        </div>
+      )}
     </>
   )
 }
