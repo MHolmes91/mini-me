@@ -1,20 +1,20 @@
 body {
-  color: #ffddff;
-  font-family: "lato", sans-serif;
-  background-color: #111111;
+  color: var(--color-text, #ffddff);
+  font-family: var(--font-body, 'lato', sans-serif);
+  background-color: var(--color-background, #111111);
 }
 
 h1, h2, h3, h4, h5 {
-  font-family: "PT Sans", sans-serif;
+  font-family: var(--font-header, 'PT Sans', sans-serif);
   font-weight: 700;
-  color: #ad71fb;
+  color: var(--color-accent, #ad71fb);
 }
 
 a {
-  color: #ad71fb;
+  color: var(--color-accent, #ad71fb);
 }
 a:visited, a:hover {
-  color: #ffddff;
+  color: var(--color-accent-alt, #ffddff);
 }
 
 @media only screen and (max-width: 650px) {
@@ -57,8 +57,8 @@ a:visited, a:hover {
   /*Github has its own circle*/
 }
 .portfolio__element__icon {
-  background-color: #dfdfdf;
-  color: #111111;
+  background-color: var(--color-icon-background, #dfdfdf);
+  color: var(--color-icon, #111111);
   width: 70px;
   height: 70px;
   padding: 29px;
@@ -69,7 +69,7 @@ a:visited, a:hover {
   font-size: 70px;
 }
 .portfolio__element:not(.portfolio__element--github):hover .portfolio__element__icon, .portfolio__element .portfolio__element:not(.portfolio__element--github):active .portfolio__element__icon {
-  background-color: #ad71fb;
+  background-color: var(--color-accent, #ad71fb);
   transition: all 0.2s ease-in 0.1s;
 }
 .portfolio__element--github .portfolio__element__icon {
@@ -78,14 +78,14 @@ a:visited, a:hover {
   text-align: center;
   padding: 0;
   border-radius: 0;
-  color: #dfdfdf;
+  color: var(--color-icon-background, #dfdfdf);
   background-color: initial;
 }
 .portfolio__element--github .portfolio__element__icon svg {
   font-size: 128px;
 }
 .portfolio__element--github:hover .portfolio__element__icon, .portfolio__element--github .portfolio__element--github:active .portfolio__element__icon {
-  color: #ad71fb;
+  color: var(--color-accent, #ad71fb);
   transition: all 0.2s ease-in 0.1s; /*Size transitions must be done differently*/
 }
 

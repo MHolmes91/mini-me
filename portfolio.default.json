@@ -7,6 +7,21 @@
 	},
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ac laoreet dui. Suspendisse sed risus elit. Sed a commodo leo. Proin vulputate convallis ultrices. Praesent ut mi vitae dui interdum ullamcorper sit amet sit amet justo. Sed non fringilla felis. Curabitur vel elementum sem, tempus tincidunt justo. Nunc et nibh imperdiet, mollis mi ut, tristique orci. Mauris sit amet ligula purus. Etiam fermentum, neque quis cursus posuere, ligula magna vehicula diam, ut dapibus velit ex id ante.",
     "gravatarEmail": "test@gravatar.com",
+    "style": {
+        "colors": {
+            "text": "#ffddff",
+            "background": "#111111",
+            "accent": "#ad71fb",
+            "accentAlt": "#ffddff",
+            "iconBackground": "#dfdfdf",
+            "icon": "#111111"
+        },
+        "fonts": {
+            "body": "'lato', sans-serif",
+            "header": "'PT Sans', sans-serif",
+            "googleFontsUrl": "//fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic|PT+Sans:400,700|PT+Sans+Narrow:400,700|Inconsolata:400"
+        }
+    },
     "footer": "<a href=\"https://github.com/MHolmes91/mini-me\">Use this repo for your own portfolio site!</a>",
     "headerPicture": {
         "linkUrl": "http://example.com/header.png",
