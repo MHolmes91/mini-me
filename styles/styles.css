@@ -65,7 +65,7 @@ a:visited, a:hover {
   border-radius: 50%;
   text-align: center;
 }
-.portfolio__element__icon > i {
+.portfolio__element__icon > svg {
   font-size: 70px;
 }
 .portfolio__element:not(.portfolio__element--github):hover .portfolio__element__icon, .portfolio__element .portfolio__element:not(.portfolio__element--github):active .portfolio__element__icon {
@@ -81,7 +81,7 @@ a:visited, a:hover {
   color: var(--color-icon-background, #dfdfdf);
   background-color: initial;
 }
-.portfolio__element--github .portfolio__element__icon i {
+.portfolio__element--github .portfolio__element__icon svg {
   font-size: 128px;
 }
 .portfolio__element--github:hover .portfolio__element__icon, .portfolio__element--github .portfolio__element--github:active .portfolio__element__icon {
