@@ -4,6 +4,17 @@ body {
   background-color: var(--color-background, #111111);
 }
 
+/* Ensure footer sticks to bottom of viewport when content is short */
+.page-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  flex: 1;
+}
+
 h1, h2, h3, h4, h5 {
   font-family: var(--font-header, 'PT Sans', sans-serif);
   font-weight: 700;
