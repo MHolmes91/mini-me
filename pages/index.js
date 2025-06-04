@@ -4,9 +4,6 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import getPortfolioProps from "../lib/getPortfolioProps";
 
-const DEFAULT_GOOGLE_FONTS_URL =
-  "//fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic|PT+Sans:400,700|PT+Sans+Narrow:400,700|Inconsolata:400";
-
 export async function getStaticProps() {
   return {
     props: getPortfolioProps(),
@@ -42,11 +39,6 @@ export default function Home({
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>{data.pageTitle ? data.pageTitle : data.title}</title>
         {faviconUrl && <link rel="icon" type={faviconType} href={faviconUrl} />}
-        <link
-          href={fonts.googleFontsUrl || DEFAULT_GOOGLE_FONTS_URL}
-          rel="stylesheet"
-          type="text/css"
-        />
         {styleVars.length > 0 && (
           <style>{`:root{${styleVars.join(";")};}`}</style>
         )}
