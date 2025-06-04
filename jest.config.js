@@ -7,6 +7,10 @@ const createJestConfig = nextJest({
 const customJestConfig = {
   setupFilesAfterEnv: ['<rootDir>/jest.setup.js'],
   testEnvironment: 'jsdom',
+  transformIgnorePatterns: ['/node_modules/(?!(nextjs-google-analytics)/)'],
+  moduleNameMapper: {
+    '^react-markdown$': '<rootDir>/__mocks__/react-markdown.js',
+  },
 };
 
 module.exports = createJestConfig(customJestConfig);
