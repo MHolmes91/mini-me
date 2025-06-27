@@ -19,7 +19,7 @@
         "fonts": {
             "body": "'lato', sans-serif",
             "header": "'PT Sans', sans-serif",
-            "googleFontsUrl": "//fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic|PT+Sans:400,700|PT+Sans+Narrow:400,700|Inconsolata:400"
+            "googleFontsUrl": "https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic|PT+Sans:400,700|PT+Sans+Narrow:400,700|Inconsolata:400&display=swap"
         }
     },
     "footer": "<a href=\"https://github.com/MHolmes91/mini-me\">Use this repo for your own portfolio site!</a>",

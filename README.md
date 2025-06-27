@@ -33,7 +33,7 @@ colors and fonts.  The following keys are supported:
     "fonts": {
       "body": "'lato', sans-serif",
       "header": "'PT Sans', sans-serif",
-      "googleFontsUrl": "//fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic|PT+Sans:400,700|PT+Sans+Narrow:400,700|Inconsolata:400"
+      "googleFontsUrl": "https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic|PT+Sans:400,700|PT+Sans+Narrow:400,700|Inconsolata:400&display=swap"
     }
   }
 }
@@ -46,8 +46,11 @@ defaults to the value in `DEFAULT_GOOGLE_FONTS_URL` inside `pages/index.js`.
 
 1. Browse or search fonts at [fonts.google.com](https://fonts.google.com).
 2. Add each font to your selection then open the **Get embed code** panel.
-3. Copy the `href` attribute from the `<link>` tag and place it in
-   `style.fonts.googleFontsUrl`.
+3. Copy the `href` attribute from the `<link>` tag and append `&display=swap` to
+   minimize layout shift, then place the result in `style.fonts.googleFontsUrl`.
+4. Use an `https:` URL if possible. The application forces Google Fonts URLs to
+   `https` and preconnects to the fonts domains to start the TLS handshake early
+   for faster loading.
 
 ## `portfolio.json` Reference
 
@@ -71,7 +74,7 @@ The file `portfolio.json` controls what content appears on your portfolio site. 
 
 ### Styling
 
-The optional `style.colors` and `style.fonts` objects override the default colours and fonts as shown above. The `googleFontsUrl` value should be copied from the `href` attribute of the embed link on [Google Fonts](https://fonts.google.com).
+The optional `style.colors` and `style.fonts` objects override the default colours and fonts as shown above. The `googleFontsUrl` value should be copied from the `href` attribute of the embed link on [Google Fonts](https://fonts.google.com) and include the `&display=swap` parameter.
 
 ### Portfolio Links
 
